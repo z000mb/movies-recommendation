@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Tests\MovieRecommendation;
 
 use App\MovieRecommendation\MultiWordRecommendation;
-use App\Tests\MovieRecommendation\RecommendationTestSetupTrait;
+use App\Tests\Shared\RecommendationTestSetupTrait;
 use PHPUnit\Framework\TestCase;
 
 final class MultiWordRecommendationTest extends TestCase
