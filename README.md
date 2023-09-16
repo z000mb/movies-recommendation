@@ -1,6 +1,6 @@
 # Movies Recommendation
 ## To run project:
-`docker compose up -d`
+#### `docker compose up -d`
 
 ## Usage:
 
@@ -12,7 +12,7 @@ selects all movies that start with the letter W and have an even number of chara
 selects all movies with at least two words
 
 ## To run tests:
-`docker compose exec php-cli php vendor/bin/phpunit`
+#### `docker compose exec php-cli php vendor/bin/phpunit`
 
 ## Enter into `php-cli` container:
-`docker compose exec php-cli sh`
+#### `docker compose exec php-cli sh`
