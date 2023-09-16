@@ -8,7 +8,7 @@ use App\Enum\RecommendationType;
 use App\Factory\RecommendationStrategyFactory;
 use App\Repository\MovieRepository;
 
-final class MovieRecommendationCommand
+final class MovieRecommendationCommand implements MovieRecommendationCommandInterface
 {
     public const USAGE_MESSAGE = "Usage: php public/index.php <RecommendationType>\n Valid RecommendationTypes: ";
 
