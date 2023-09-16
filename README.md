@@ -1,7 +1,6 @@
 # Movies Recommendation
 ## To run project:
-`docker compose up -d` \
-`docker compose exec php-cli php public/index.php`
+`docker compose up -d`
 
 ## Usage:
 
