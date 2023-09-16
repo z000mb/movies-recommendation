@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Tests\Repository;
 
-use App\Tests\MovieRecommendation\RecommendationTestSetupTrait;
+use App\Repository\MovieRepository;
+use App\Tests\Shared\RecommendationTestSetupTrait;
 use PHPUnit\Framework\TestCase;
 
 /**

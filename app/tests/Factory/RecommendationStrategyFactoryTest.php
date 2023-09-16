@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Factory;
+namespace App\Tests\Factory;
 
 use App\Enum\RecommendationType;
+use App\Factory\RecommendationStrategyFactory;
 use App\MovieRecommendation\FirstLetterWAndEvenCharactersRecommendation;
 use App\MovieRecommendation\MultiWordRecommendation;
 use App\MovieRecommendation\RandomRecommendation;
-use App\Tests\MovieRecommendation\RecommendationTestSetupTrait;
+use App\Tests\Shared\RecommendationTestSetupTrait;
 use PHPUnit\Framework\TestCase;
 
 /**

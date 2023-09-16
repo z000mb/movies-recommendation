@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\MovieRecommendation;
+namespace App\Tests\Shared;
 
 trait RecommendationTestSetupTrait
 {
