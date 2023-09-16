@@ -10,6 +10,8 @@ use App\Repository\MovieRepository;
 
 final class MovieRecommendationCommand
 {
+    public const USAGE_MESSAGE = "Usage: php public/index.php <RecommendationType>\n Valid RecommendationTypes: ";
+
     public function run(array $args): void
     {
         if (count($args) !== 1) {
@@ -31,7 +33,7 @@ final class MovieRecommendationCommand
         $selectedStrategy = RecommendationStrategyFactory::createStrategy($recommendationType);
         $recommendations = $selectedStrategy->recommend($movieRepository->getAllMovies());
 
-        var_dump($recommendations);
+        echo implode(', ', $recommendations) . PHP_EOL;
     }
 
     private function showUsage(): void
@@ -40,7 +42,6 @@ final class MovieRecommendationCommand
             return $type->value;
         }, RecommendationType::cases());
 
-        echo "Usage: php public/index.php <RecommendationType>\n";
-        echo "Valid RecommendationTypes: " . implode(", ", $possibleValues) . "\n";
+        echo self::USAGE_MESSAGE . implode(", ", $possibleValues) . "\n";
     }
 }
