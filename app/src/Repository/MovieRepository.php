@@ -8,8 +8,8 @@ final class MovieRepository
 {
     private array $movieList;
 
-    public function __construct(array $initialData = []) {
-        $this->movieList = $initialData;
+    public function __construct() {
+        $this->movieList = include dirname(__DIR__) . '/data/movies.php';
     }
 
     public function getAllMovies(): array

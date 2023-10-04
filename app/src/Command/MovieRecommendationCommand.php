@@ -27,11 +27,8 @@ final class MovieRecommendationCommand implements MovieRecommendationCommandInte
             return;
         }
 
-        $initialData = include dirname(__DIR__) . '/data/movies.php';
-        $movieRepository = new MovieRepository($initialData);
-
         $selectedStrategy = RecommendationStrategyFactory::createStrategy($recommendationType);
-        $recommendations = $selectedStrategy->recommend($movieRepository->getAllMovies());
+        $recommendations = $selectedStrategy->recommend((new MovieRepository())->getAllMovies());
 
         echo implode(', ', $recommendations) . PHP_EOL;
     }

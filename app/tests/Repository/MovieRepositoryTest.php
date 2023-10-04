@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Repository;
 
 use App\Repository\MovieRepository;
-use App\Tests\Shared\RecommendationTestSetupTrait;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,22 +12,24 @@ use PHPUnit\Framework\TestCase;
  */
 final class MovieRepositoryTest extends TestCase
 {
-    use RecommendationTestSetupTrait;
+    private MovieRepository $movieRepository;
 
-    public function testGetAllMoviesReturnsInitialData(): void
+    protected function setUp(): void
     {
-        $movies = (new MovieRepository($this->movieList))->getAllMovies();
-
-        $expectedMovies = $this->movieList;
-
-        $this->assertEquals($expectedMovies, $movies);
+        $this->movieRepository = new MovieRepository();
     }
 
-    public function testGetAllMoviesReturnsEmptyArrayIfNoData(): void
+    public function testGetAllMoviesReturnsArray(): void
     {
-        $emptyRepository = new MovieRepository();
-        $movies = $emptyRepository->getAllMovies();
+        $movies = $this->movieRepository->getAllMovies();
 
-        $this->assertEmpty($movies);
+        $this->assertIsArray($movies);
+    }
+
+    public function testGetAllMoviesContainsData(): void
+    {
+        $movies = $this->movieRepository->getAllMovies();
+
+        $this->assertNotEmpty($movies);
     }
 }
